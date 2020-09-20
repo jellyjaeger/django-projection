@@ -1,0 +1,17 @@
+{% extends 'myblog/layout.html' %}
+{%block content%}
+    <div class="card" style="display:inline-block;border:none;">
+        <img src="{{object.author.profile.image.url}}" style='border-radius:50%;height:60px;width:60px;' alt='Author photo'>
+        <div class="card-body">
+          <h5 class="card-title">{{object.title}}</h5>
+          <p class="card-text">{{object.author}}</p> 
+          <p class="card-text">{{object.content}}</p> 
+          <p class="card-text"><small class="text-muted">{{object.date_time}}</small></p>
+          {% if object.author == user %}
+           <a href="{% url 'post-update' object.id %}"><button type="submit"  class="btn btn-primary">Update</button></a>
+           <a href="{% url 'post-delete' object.id %}"><button type="submit" class="btn btn-primary" >Delete</button></a>
+          <a href="{% url 'myblog-home' %}"><button type="submit" class="btn btn-primary" >Go back</button></a>
+          {% endif %} 
+        </div>
+      </div>
+  {% endblock %}

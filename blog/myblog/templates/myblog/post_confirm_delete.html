@@ -1,0 +1,11 @@
+{%extends 'myblog/layout.html' %}
+{% load crispy_forms_tags %}
+{%block content%}
+<form method="POST" >
+ <p class="card-text">Are you sure you want to delete the post?</p>
+  {% csrf_token %}
+     
+    <button type="submit" class="btn btn-primary">Yes,I want </button> 
+    <a href="{% url 'myblog-home'  %}">Nope</a> 
+  </form>
+  {% endblock %}

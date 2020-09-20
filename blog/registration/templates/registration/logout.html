@@ -1,0 +1,8 @@
+{%extends 'myblog/layout.html' %}
+
+{%block content%}
+<div class="alert alert-primary" role="alert">
+You have been logged out
+</div>
+<small class="text-muted">Need to go back.. </small><br><a href="{% url 'login' %}"><button type="submit" class="btn btn-primary">Sign in Again</button></a>
+{% endblock %}
